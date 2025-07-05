@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Live Face Detection</title>
+</head>
+<body>
+    <h2>Live Webcam Feed</h2>
+    <img src="{{ url_for('video') }}" width="720"><br><br>
+
+    <form action="{{ url_for('capture') }}" method="POST">
+        <button type="submit">📸 Capture Face Snapshot</button>
+    </form>
+
+    {% if message %}
+    <p style="color:green;"><strong>{{ message }}</strong></p>
+    {% endif %}
+</body>
+</html>
